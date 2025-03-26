@@ -1,4 +1,49 @@
 # Humanforce .NET take home challenge
+
+# Stack
+### Deps
+- CleanArchitecture
+    - MediatR
+    - AutoMapper
+    - FluentValidation
+    - FluentAssertions
+    - NUnit
+    - Respawn
+- Postgresql
+
+### Setup
+ - Generating Migrations
+ ```
+ $ dotnet ef migrations add "RemovedAppointmentDoctorId" --project src/Infrastructure --startup-project src/Web --output-dir Data/Migrations
+ ```
+
+ - Running Migrations
+  ```
+ $ dotnet ef database update --project src/Web
+ ```
+
+  - Running Tests
+  ```
+ $ dotnet test 
+ ```
+
+  - Running Development (localhost)
+  ```
+ $ dotnet run --project src/Web
+ ```
+
+
+### Play
+1. Run API
+2. Go to `localhost:5001` for Swagger openapi doc
+3. Generate Bearer token through `api/users/login` using credentials seeded from [ApplicationDbContextIntiialiser.cs](https://github.com/humanforce/dotnet-challenge-gerardomaranan/blob/f7becb1b98dab6c83ba0562b0a15c74d412675fc/src/Infrastructure/Data/ApplicationDbContextInitialiser.cs#L82)
+4. Have fun testing
+
+
+
+
+---
+
 ### Appointment Scheduling API Design
 
 ## Objective:
