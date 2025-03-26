@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "f4af0f25-23d9-4754-a68b-689be85ac754",
+		"name": "AppointmentSchedulingApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2107462"
+	},
+	"item": [
+		{
+			"name": "Login (Basic Bearer)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"administrator@localhost\",\r\n    \"password\": \"Administrator1!\",\r\n    \"twoFactorCode\": \"\",\r\n    \"twoFactorRecoveryCode\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/users/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient Appointments History",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "CfDJ8C72nERuLRtBhe94SvqjCaZQ5aROne-OnbiqDfGywSRRtQ584Fo_IZCSbW9qLLerNMqDQL6PPs8VvTDlXpsPPS19jXMG2h0Xp85w7HaKubesl0N6GwjfGY461lzciOeOi4_Ygx3ZLzJD1TCkQ2dLJqWopxymJ8h9QINPcXAMVy5jgiMHK4GNLU2JFLamj6KLjwtPHmVYK4gFJbRuX4g-GPWgvcIT__F8JfuSkyhd4FqGRuaOxJHvsG4zSsHggbOTazE7Ozu9VjR28cStzmsJ1JHzqxbF33u6mjnb4nhZA9vHWOE9M7DYHFFz5r46YnNDCucPiHxQSC7xi8R1La_Ny3vyCx1TeKlKBb3lD2aSwC62ZPf3xZBAccLu8TE4ULAtS4Mus3NuIbaMyBahYTAd8QJp_rX4lcsjzKErZrlQ4Ns88lPRyz_T0vNP13Lm1a2Szu3nAHGNRbOwzAIgm94VcoONKKPFWqyI6N6McMuRufjCTd8yVfapwr8USRyKjfEf1_CaYbti90_2dKV98jpOdztscK78JP04VBhSoC_F_tHdDYIgQVHJgYgB1osIVSvugAcHrhFhzesjvXiJ6M45dK8Yr5LFXT2J9y5PCi9oLP6k5wg2EdtrM__92SV0rnp_tadyxtAFm63-e8mdhCtKHheol0htur9b3Oy8QqLLGCiJNXuFLCU-Ds4EE7j4KNHwPVyETDxNdt2CqfxKbIpYxbkUwGqMl1HzL0ynQX8SHtEFKC43Uz8RLJB0DeR8AW0Mje3h_WsQW5BpmgtcnHOXxpJQhk9xlHodFVK8-x7FvkmgXCFv0h5r4pNNxEpzjxA_1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/appointments?PatientId=2&PageNumber=1&PageSize=10",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"appointments"
+					],
+					"query": [
+						{
+							"key": "PatientId",
+							"value": "2"
+						},
+						{
+							"key": "PageNumber",
+							"value": "1"
+						},
+						{
+							"key": "PageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Doctor Schedule of Appointments by Date",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "CfDJ8C72nERuLRtBhe94SvqjCaZQ5aROne-OnbiqDfGywSRRtQ584Fo_IZCSbW9qLLerNMqDQL6PPs8VvTDlXpsPPS19jXMG2h0Xp85w7HaKubesl0N6GwjfGY461lzciOeOi4_Ygx3ZLzJD1TCkQ2dLJqWopxymJ8h9QINPcXAMVy5jgiMHK4GNLU2JFLamj6KLjwtPHmVYK4gFJbRuX4g-GPWgvcIT__F8JfuSkyhd4FqGRuaOxJHvsG4zSsHggbOTazE7Ozu9VjR28cStzmsJ1JHzqxbF33u6mjnb4nhZA9vHWOE9M7DYHFFz5r46YnNDCucPiHxQSC7xi8R1La_Ny3vyCx1TeKlKBb3lD2aSwC62ZPf3xZBAccLu8TE4ULAtS4Mus3NuIbaMyBahYTAd8QJp_rX4lcsjzKErZrlQ4Ns88lPRyz_T0vNP13Lm1a2Szu3nAHGNRbOwzAIgm94VcoONKKPFWqyI6N6McMuRufjCTd8yVfapwr8USRyKjfEf1_CaYbti90_2dKV98jpOdztscK78JP04VBhSoC_F_tHdDYIgQVHJgYgB1osIVSvugAcHrhFhzesjvXiJ6M45dK8Yr5LFXT2J9y5PCi9oLP6k5wg2EdtrM__92SV0rnp_tadyxtAFm63-e8mdhCtKHheol0htur9b3Oy8QqLLGCiJNXuFLCU-Ds4EE7j4KNHwPVyETDxNdt2CqfxKbIpYxbkUwGqMl1HzL0ynQX8SHtEFKC43Uz8RLJB0DeR8AW0Mje3h_WsQW5BpmgtcnHOXxpJQhk9xlHodFVK8-x7FvkmgXCFv0h5r4pNNxEpzjxA_1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/appointments?DoctorId=1&Start=2025-03-22T00%3A00%3A00%2B00%3A00&End=2025-03-22T23%3A59%3A59%2B00%3A00&PageNumber=1&PageSize=10",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"appointments"
+					],
+					"query": [
+						{
+							"key": "DoctorId",
+							"value": "1"
+						},
+						{
+							"key": "Start",
+							"value": "2025-03-22T00%3A00%3A00%2B00%3A00"
+						},
+						{
+							"key": "End",
+							"value": "2025-03-22T23%3A59%3A59%2B00%3A00"
+						},
+						{
+							"key": "PageNumber",
+							"value": "1"
+						},
+						{
+							"key": "PageSize",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Doctor Available Timeslots",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Appointments Summary Report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "CfDJ8C72nERuLRtBhe94SvqjCaZQ5aROne-OnbiqDfGywSRRtQ584Fo_IZCSbW9qLLerNMqDQL6PPs8VvTDlXpsPPS19jXMG2h0Xp85w7HaKubesl0N6GwjfGY461lzciOeOi4_Ygx3ZLzJD1TCkQ2dLJqWopxymJ8h9QINPcXAMVy5jgiMHK4GNLU2JFLamj6KLjwtPHmVYK4gFJbRuX4g-GPWgvcIT__F8JfuSkyhd4FqGRuaOxJHvsG4zSsHggbOTazE7Ozu9VjR28cStzmsJ1JHzqxbF33u6mjnb4nhZA9vHWOE9M7DYHFFz5r46YnNDCucPiHxQSC7xi8R1La_Ny3vyCx1TeKlKBb3lD2aSwC62ZPf3xZBAccLu8TE4ULAtS4Mus3NuIbaMyBahYTAd8QJp_rX4lcsjzKErZrlQ4Ns88lPRyz_T0vNP13Lm1a2Szu3nAHGNRbOwzAIgm94VcoONKKPFWqyI6N6McMuRufjCTd8yVfapwr8USRyKjfEf1_CaYbti90_2dKV98jpOdztscK78JP04VBhSoC_F_tHdDYIgQVHJgYgB1osIVSvugAcHrhFhzesjvXiJ6M45dK8Yr5LFXT2J9y5PCi9oLP6k5wg2EdtrM__92SV0rnp_tadyxtAFm63-e8mdhCtKHheol0htur9b3Oy8QqLLGCiJNXuFLCU-Ds4EE7j4KNHwPVyETDxNdt2CqfxKbIpYxbkUwGqMl1HzL0ynQX8SHtEFKC43Uz8RLJB0DeR8AW0Mje3h_WsQW5BpmgtcnHOXxpJQhk9xlHodFVK8-x7FvkmgXCFv0h5r4pNNxEpzjxA_1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/appointments/summary?Start=2025-03-22T00%3A00%3A00%2B00%3A00&End=2025-03-22T23%3A59%3A59%2B00%3A00",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"appointments",
+						"summary"
+					],
+					"query": [
+						{
+							"key": "Start",
+							"value": "2025-03-22T00%3A00%3A00%2B00%3A00"
+						},
+						{
+							"key": "End",
+							"value": "2025-03-22T23%3A59%3A59%2B00%3A00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Appointment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "CfDJ8C72nERuLRtBhe94SvqjCaZQ5aROne-OnbiqDfGywSRRtQ584Fo_IZCSbW9qLLerNMqDQL6PPs8VvTDlXpsPPS19jXMG2h0Xp85w7HaKubesl0N6GwjfGY461lzciOeOi4_Ygx3ZLzJD1TCkQ2dLJqWopxymJ8h9QINPcXAMVy5jgiMHK4GNLU2JFLamj6KLjwtPHmVYK4gFJbRuX4g-GPWgvcIT__F8JfuSkyhd4FqGRuaOxJHvsG4zSsHggbOTazE7Ozu9VjR28cStzmsJ1JHzqxbF33u6mjnb4nhZA9vHWOE9M7DYHFFz5r46YnNDCucPiHxQSC7xi8R1La_Ny3vyCx1TeKlKBb3lD2aSwC62ZPf3xZBAccLu8TE4ULAtS4Mus3NuIbaMyBahYTAd8QJp_rX4lcsjzKErZrlQ4Ns88lPRyz_T0vNP13Lm1a2Szu3nAHGNRbOwzAIgm94VcoONKKPFWqyI6N6McMuRufjCTd8yVfapwr8USRyKjfEf1_CaYbti90_2dKV98jpOdztscK78JP04VBhSoC_F_tHdDYIgQVHJgYgB1osIVSvugAcHrhFhzesjvXiJ6M45dK8Yr5LFXT2J9y5PCi9oLP6k5wg2EdtrM__92SV0rnp_tadyxtAFm63-e8mdhCtKHheol0htur9b3Oy8QqLLGCiJNXuFLCU-Ds4EE7j4KNHwPVyETDxNdt2CqfxKbIpYxbkUwGqMl1HzL0ynQX8SHtEFKC43Uz8RLJB0DeR8AW0Mje3h_WsQW5BpmgtcnHOXxpJQhk9xlHodFVK8-x7FvkmgXCFv0h5r4pNNxEpzjxA_1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"patientId\": 2,\r\n  \"timeslotId\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/appointments",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Appointment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "CfDJ8C72nERuLRtBhe94SvqjCaZQ5aROne-OnbiqDfGywSRRtQ584Fo_IZCSbW9qLLerNMqDQL6PPs8VvTDlXpsPPS19jXMG2h0Xp85w7HaKubesl0N6GwjfGY461lzciOeOi4_Ygx3ZLzJD1TCkQ2dLJqWopxymJ8h9QINPcXAMVy5jgiMHK4GNLU2JFLamj6KLjwtPHmVYK4gFJbRuX4g-GPWgvcIT__F8JfuSkyhd4FqGRuaOxJHvsG4zSsHggbOTazE7Ozu9VjR28cStzmsJ1JHzqxbF33u6mjnb4nhZA9vHWOE9M7DYHFFz5r46YnNDCucPiHxQSC7xi8R1La_Ny3vyCx1TeKlKBb3lD2aSwC62ZPf3xZBAccLu8TE4ULAtS4Mus3NuIbaMyBahYTAd8QJp_rX4lcsjzKErZrlQ4Ns88lPRyz_T0vNP13Lm1a2Szu3nAHGNRbOwzAIgm94VcoONKKPFWqyI6N6McMuRufjCTd8yVfapwr8USRyKjfEf1_CaYbti90_2dKV98jpOdztscK78JP04VBhSoC_F_tHdDYIgQVHJgYgB1osIVSvugAcHrhFhzesjvXiJ6M45dK8Yr5LFXT2J9y5PCi9oLP6k5wg2EdtrM__92SV0rnp_tadyxtAFm63-e8mdhCtKHheol0htur9b3Oy8QqLLGCiJNXuFLCU-Ds4EE7j4KNHwPVyETDxNdt2CqfxKbIpYxbkUwGqMl1HzL0ynQX8SHtEFKC43Uz8RLJB0DeR8AW0Mje3h_WsQW5BpmgtcnHOXxpJQhk9xlHodFVK8-x7FvkmgXCFv0h5r4pNNxEpzjxA_1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 3,\r\n  \"patientId\": 2,\r\n  \"timeslotId\": 3,\r\n  \"status\": \"Cancelled\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/appointments/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"appointments",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Appointment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "CfDJ8C72nERuLRtBhe94SvqjCaZQ5aROne-OnbiqDfGywSRRtQ584Fo_IZCSbW9qLLerNMqDQL6PPs8VvTDlXpsPPS19jXMG2h0Xp85w7HaKubesl0N6GwjfGY461lzciOeOi4_Ygx3ZLzJD1TCkQ2dLJqWopxymJ8h9QINPcXAMVy5jgiMHK4GNLU2JFLamj6KLjwtPHmVYK4gFJbRuX4g-GPWgvcIT__F8JfuSkyhd4FqGRuaOxJHvsG4zSsHggbOTazE7Ozu9VjR28cStzmsJ1JHzqxbF33u6mjnb4nhZA9vHWOE9M7DYHFFz5r46YnNDCucPiHxQSC7xi8R1La_Ny3vyCx1TeKlKBb3lD2aSwC62ZPf3xZBAccLu8TE4ULAtS4Mus3NuIbaMyBahYTAd8QJp_rX4lcsjzKErZrlQ4Ns88lPRyz_T0vNP13Lm1a2Szu3nAHGNRbOwzAIgm94VcoONKKPFWqyI6N6McMuRufjCTd8yVfapwr8USRyKjfEf1_CaYbti90_2dKV98jpOdztscK78JP04VBhSoC_F_tHdDYIgQVHJgYgB1osIVSvugAcHrhFhzesjvXiJ6M45dK8Yr5LFXT2J9y5PCi9oLP6k5wg2EdtrM__92SV0rnp_tadyxtAFm63-e8mdhCtKHheol0htur9b3Oy8QqLLGCiJNXuFLCU-Ds4EE7j4KNHwPVyETDxNdt2CqfxKbIpYxbkUwGqMl1HzL0ynQX8SHtEFKC43Uz8RLJB0DeR8AW0Mje3h_WsQW5BpmgtcnHOXxpJQhk9xlHodFVK8-x7FvkmgXCFv0h5r4pNNxEpzjxA_1A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/appointments/2/cancel",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"appointments",
+						"2",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
